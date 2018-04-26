@@ -12,7 +12,7 @@ function JustSayIt(port, callback) {
 }
 
 function just_say_it(post, callback) {
-	return new JustSayIt(post, callback)
+  return new JustSayIt(post, callback)
 }
 
 JustSayIt.prototype.stop = function() {
