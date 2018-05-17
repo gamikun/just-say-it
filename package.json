@@ -1,7 +1,7 @@
 {
   "name": "justsayit",
   "description": "Simple JSON response server and no third party dependencies",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Gamaliel Espinoza M. <gamaliel.espinoza@gmail.com>",
   "license": "MIT",
   "repository": "gamikun/just-say-it",

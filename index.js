@@ -3,8 +3,18 @@ const http = require('http')
 function JustSayIt(port, callback) {
   this.server = http.createServer(function(req, res) {
     const data = callback(req)
-    const serialized = JSON.stringify(data)
-    res.setHeader('Content-Type', 'application/json')
+    let serialized
+    let mime
+
+    if (typeof(data) === 'object') {
+      serialized = JSON.stringify(data)
+      mime = 'application/json'
+    } else {
+      mime = 'Content-Type', 'text/plain; charset=utf-8'
+      serialized = data
+    }
+    
+    res.setHeader('Content-Type', mime)
     res.setHeader('Content-Length', serialized.length.toString())
     res.end(serialized)
   })
